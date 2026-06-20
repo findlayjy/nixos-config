@@ -1,9 +1,9 @@
 { config, pkgs, ... }:
 
 {
-  home.username = jamief;
-  home.homeDirectory = /home/jamief;
-  home.stateVersion = 25.11;
+  home.username = "jamief";
+  home.homeDirectory = "/home/jamief";
+  home.stateVersion = "25.11";
 
   home.file = {
     ".zshrc".source = ./dotfiles/.zshrc;
