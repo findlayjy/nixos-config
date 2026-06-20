@@ -6,9 +6,11 @@
   };
 
   outputs = { self, nixpkgs }: {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [ ./configuration.nix ];
+    nixosConfigurations = {
+      vm = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [ ./hosts/vm/configuration.nix ];
+      };
     };
   };
 }
