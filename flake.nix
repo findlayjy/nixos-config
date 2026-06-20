@@ -13,7 +13,15 @@
     nixosConfigurations = {
       vm = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [ ./hosts/vm/configuration.nix ];
+        modules = [ 
+		./hosts/vm/configuration.nix
+		home-manager.nixosModules.homeManager
+	          {
+        	    home-manager.useGlobalPkgs = true;
+	            home-manager.useUserPackages = true;
+	            home-manager.users.jamief = import ./home.nix;
+        	  }
+	 ];
       };
     };
   };
