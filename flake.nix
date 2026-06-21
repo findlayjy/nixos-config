@@ -24,7 +24,7 @@
 						 ./home.nix
 						 ./hosts/vm/home.nix
 					];
-				}
+				};
         	  }
 	 ];
       };
