@@ -15,4 +15,15 @@
     ".config/alacritty".source = /home/jamief/.dotfiles/.config/alacritty;
   };
 
+  nixprograms.git = {
+    enable = true;
+    userName = "Jamie Findlay";
+    userEmail = "jy.findlay@gmail.com";
+    extraConfig = {
+      init.defaultBranch = "main";
+      pull.rebase = false;
+  };
+
+};
+
 }
