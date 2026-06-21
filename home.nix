@@ -6,12 +6,13 @@
   home.stateVersion = "25.11";
 
   home.file = {
-    ".zshrc".source = ./dotfiles/.zshrc;
-    ".zshenv".source = ./dotfiles/.zshenv;
-    ".zsh".source = ./dotfiles/.zsh;
-    ".vimrc".source = ./dotfiles/.vimrc;
-    ".latexmkrc".source = ./dotfiles/.latexmkrc;
-    ".dir_colors".source = ./dotfiles/.dir_colors;
-    ".config/alacritty".source = ./dotfiles/.config/alacritty;
+    ".zshrc".source = /home/jamief/.dotfiles/.zshrc;
+    ".zshenv".source = /home/jamief/.dotfiles/.zshenv;
+    ".zsh".source = /home/jamief/.dotfiles/.zsh;
+    ".vimrc".source = /home/jamief/.dotfiles/.vimrc;
+    ".latexmkrc".source = /home/jamief/.dotfiles/.latexmkrc;
+    ".dir_colors".source = /home/jamief/.dotfiles/.dir_colors;
+    ".config/alacritty".source = /home/jamief/.dotfiles/.config/alacritty;
   };
+
 }
