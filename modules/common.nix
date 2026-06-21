@@ -13,6 +13,7 @@
     alacritty
     git
     ripgrep
+    wl-clipboard
   ];
 
   # Fonts
