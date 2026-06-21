@@ -19,7 +19,12 @@
 	          {
         	    home-manager.useGlobalPkgs = true;
 	            home-manager.useUserPackages = true;
-	            home-manager.users.jamief = import ./home.nix;
+	            home-manager.users.jamief = {
+					imports = [
+						 ./home.nix
+						 ./hosts/vm/home.nix
+					];
+				}
         	  }
 	 ];
       };
