@@ -15,7 +15,7 @@
     ".config/alacritty".source = /home/jamief/.dotfiles/.config/alacritty;
   };
 
-  nixprograms.git = {
+  programs.git = {
     enable = true;
     userName = "Jamie Findlay";
     userEmail = "jy.findlay@gmail.com";
