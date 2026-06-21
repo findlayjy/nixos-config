@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  # Setting up zsh as the shell
+  programs.zsh.enable = true;
+  users.users.jamief.shell = pkgs.zsh;
+
   # Packages
   programs.firefox.enable = true;
   nixpkgs.config.allowUnfree = true;
@@ -9,7 +13,6 @@
     alacritty
     git
     ripgrep
-    zsh
   ];
 
   # Fonts
