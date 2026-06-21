@@ -17,11 +17,12 @@
 
   programs.git = {
     enable = true;
-    userName = "Jamie Findlay";
-    userEmail = "jy.findlay@gmail.com";
-    extraConfig = {
+    settings = {
+      user.name = "Jamie Findlay";
+      user.email = "jy.findlay@gmail.com";
       init.defaultBranch = "main";
       pull.rebase = false;
+    };
   };
 
 };
