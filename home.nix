@@ -1,10 +1,12 @@
 { config, pkgs, ... }:
 
 {
+  ## BASIC SETTINGS
   home.username = "jamief";
   home.homeDirectory = "/home/jamief";
   home.stateVersion = "25.11";
 
+  ## SYMLINKING DOTFILES
   home.file = {
     ".zshrc".source = /home/jamief/.dotfiles/.zshrc;
     ".zshenv".source = /home/jamief/.dotfiles/.zshenv;
@@ -15,6 +17,25 @@
     ".config/alacritty".source = /home/jamief/.dotfiles/.config/alacritty;
   };
 
+  # Setting some default applications 	
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "text/html" = "brave-browser.desktop";
+      "x-scheme-handler/http" = "brave-browser.desktop";
+      "x-scheme-handler/https" = "brave-browser.desktop";
+      "x-scheme-handler/chrome" = "brave-browser.desktop";
+      "application/x-extension-htm" = "brave-browser.desktop";
+      "application/x-extension-html" = "brave-browser.desktop";
+      "application/x-extension-shtml" = "brave-browser.desktop";
+      "application/xhtml+xml" = "brave-browser.desktop";
+      "application/x-extension-xhtml" = "brave-browser.desktop";
+      "application/x-extension-xht" = "brave-browser.desktop";
+      "x-scheme-handler/about" = "brave-browser.desktop";
+    };
+  };
+
+  # Git settings
   programs.git = {
     enable = true;
     settings = {
