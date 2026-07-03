@@ -14,6 +14,7 @@
     git
     ripgrep
     wl-clipboard
+	tree
   ];
 
   # Fonts
