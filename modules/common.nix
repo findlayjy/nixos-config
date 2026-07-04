@@ -3,7 +3,7 @@
 {
 
   ## DESKTOP ENVIRONMENT
-  import = [
+  imports = [
 #    ./desktop-environments/gnome/system.nix # Set Gnome as the DE  
     ./desktop-environments/cosmic/system.nix # Set COSMIC as the DE
   ];  

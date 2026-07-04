@@ -1,6 +1,7 @@
 # System settings that install and set COSMIC as the DE
 
 {config, pkgs, ...}:
+
 {
   # Enable the COSMIC login manager
   services.displayManager.cosmic-greeter.enable = true;
