@@ -1,6 +1,13 @@
 { config, pkgs, ... }:
 
 {
+
+  ## DESKTOP ENVIRONMENT
+  import = [
+#    ./desktop-environments/gnome/system.nix # Set Gnome as the DE  
+    ./desktop-environments/cosmic/system.nix # Set COSMIC as the DE
+  ];  
+  
   # Setting up zsh as the shell
   programs.zsh.enable = true;
   users.users.jamief.shell = pkgs.zsh;
@@ -8,10 +15,10 @@
   ## PACKAGES
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
   # Firefox
   programs.firefox.enable = true;
-  # Brave (browser)
-#  programs.brave.enable = true;
+
   # Extensions for Chromium browsers (IDs from Chrome Web Store URL)
   programs.chromium = {
     enable = true;
@@ -20,7 +27,7 @@
     ];
   };
 
-  # Misc dev tools (probably should move most of these to their own lines)
+  # Other packages without dedicated Nix modules (some do and should be moved up)
   environment.systemPackages = with pkgs; [
     vim
     alacritty
@@ -29,12 +36,14 @@
     wl-clipboard
 	tree
 	brave
+#	gnome-tweaks
+	nordic
   ];
 
   ## FONTS
-  # JetBrains mono
   fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
+    nerd-fonts.jetbrains-mono  # JetBrains Mono
+	fira                       # Fira Sans
   ];
 
   ## NETWORKING
@@ -47,8 +56,6 @@
 
   ## DESKTOP
   services.xserver.enable = true;
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
   services.xserver.xkb = {
     layout = "gb";
     variant = "";
