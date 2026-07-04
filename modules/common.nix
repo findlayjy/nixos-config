@@ -36,7 +36,6 @@
     wl-clipboard
 	tree
 	brave
-#	gnome-tweaks
 	nordic
   ];
 
