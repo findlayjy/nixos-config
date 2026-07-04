@@ -16,6 +16,29 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # General system packages without dedicated Nix modules
+  environment.systemPackages = with pkgs; [
+    vim
+	emacs-pgtk
+    alacritty
+    git
+    wl-clipboard
+	tree
+	brave
+	nordic
+	# Doom emacs requirements
+	fd
+    ripgrep
+	pandoc  # for markdown compiling
+	shellcheck
+  ];
+
+  # Enable emacs daemon and set as default editor
+  services.emacs = {
+    enable = true;
+    defaultEditor = true;
+  };
+
   # Firefox
   programs.firefox.enable = true;
 
@@ -27,22 +50,12 @@
     ];
   };
 
-  # Other packages without dedicated Nix modules (some do and should be moved up)
-  environment.systemPackages = with pkgs; [
-    vim
-    alacritty
-    git
-    ripgrep
-    wl-clipboard
-	tree
-	brave
-	nordic
-  ];
-
   ## FONTS
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono  # JetBrains Mono
+	nerd-fonts.symbols-only
 	fira                       # Fira Sans
+	symbola
   ];
 
   ## NETWORKING
