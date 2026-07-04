@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+#    ./modules/desktop-environments/gnome/home.nix # User settings for Gnome
+#    ./modules/desktop-environments/cosmic/home.nix # Enable when COSMIC is configured the way I like
+  ];
+  
   ## BASIC SETTINGS
   home.username = "jamief";
   home.homeDirectory = "/home/jamief";
@@ -35,6 +40,9 @@
     };
   };
 
+  ## USER PACKAGES
+  # ...
+ 
   # Git settings
   programs.git = {
     enable = true;
