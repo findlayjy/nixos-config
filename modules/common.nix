@@ -26,11 +26,22 @@
 	tree
 	brave
 	nordic
+	# Python
+	python3
+	python3Packages.isort
+	python3Packages.pytest
+	pipenv
+	# Haskell
+	haskellPackages.ghc
+	haskellPackages.cabal-install
+	haskellPackages.hoogle
+	haskell-language-server
 	# Doom emacs requirements
 	fd
     ripgrep
 	pandoc  # for markdown compiling
 	shellcheck
+	grip
   ];
 
   # Enable emacs daemon and set as default editor
