@@ -6,7 +6,7 @@
   imports = [
     # ./desktop-environments/gnome/system.nix # Set Gnome as the DE
     ./desktop-environments/cosmic/system.nix # Set COSMIC as the DE
-	# ./desktop-environments/plasma/system.nix # Set Plasma as the DE
+	  # ./desktop-environments/plasma/system.nix # Set Plasma as the DE
   ];  
   
   # Setting up zsh as the shell
@@ -25,25 +25,27 @@
     git
     wl-clipboard
     tree
-	tldr
+    tldr
     brave
     nordic
-	  # Python
-	  python3
-	  python3Packages.isort
-	  python3Packages.pytest
-	  pipenv
-	  # Haskell
-	  haskellPackages.ghc
-	  haskellPackages.cabal-install
-	  haskellPackages.hoogle
-	  haskell-language-server
-	  # Doom emacs requirements
-	  fd
-	  ripgrep
-	  pandoc  # for markdown compiling
-	  shellcheck
-	  grip
+    # texliveFull
+    texliveMedium
+    # Python
+    python3
+    python3Packages.isort
+    python3Packages.pytest
+    pipenv
+    # Haskell
+    haskellPackages.ghc
+    haskellPackages.cabal-install
+    haskellPackages.hoogle
+    haskell-language-server
+    # Doom emacs requirements
+    fd
+    ripgrep
+    pandoc  # for markdown compiling
+    shellcheck
+    grip
   ];
 
   # Enable emacs daemon and set as default editor
