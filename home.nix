@@ -14,7 +14,7 @@
 	## SYMLINKING DOTFILES
 	home.file = {
 		".zshrc".source = config.lib.file.mkOutOfStoreSymlink /home/jamief/.dotfiles/.zshrc;
-		".zshenv".source = config.lib.file.mkOutOfStoreSymlink /home/jamief/.dotfiles/.zshrc;
+		".zshenv".source = config.lib.file.mkOutOfStoreSymlink /home/jamief/.dotfiles/.zshenv;
     	".zsh".source = config.lib.file.mkOutOfStoreSymlink /home/jamief/.dotfiles/.zsh;
 	    ".vimrc".source = config.lib.file.mkOutOfStoreSymlink /home/jamief/.dotfiles/.vimrc;
 	    ".latexmkrc".source = config.lib.file.mkOutOfStoreSymlink /home/jamief/.dotfiles/.latexmkrc;
