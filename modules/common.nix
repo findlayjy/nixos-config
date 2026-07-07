@@ -67,6 +67,7 @@
 	nerd-fonts.symbols-only
 	fira                       # Fira Sans
 	symbola
+	source-sans
   ];
 
   ## NETWORKING
