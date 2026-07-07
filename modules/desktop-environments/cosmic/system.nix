@@ -18,4 +18,10 @@
     trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
     ];
   };
+
+	# Some COSMIC-specific packages
+	environment.systemPackages = with pkgs; [
+		cosmic-monitor
+	];
+
 }
