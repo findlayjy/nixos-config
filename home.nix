@@ -3,8 +3,8 @@
 {
   imports = [
 #    ./modules/desktop-environments/gnome/home.nix # User settings for Gnome
-#    ./modules/desktop-environments/cosmic/home.nix # Enable when COSMIC is configured the way I like
 #    ./modules/desktop-environments/plasma/home.nix # User settings for Plasma
+   ./modules/desktop-environments/cosmic/home.nix # Enable when COSMIC is configured the way I like
   ];
   
   ## BASIC SETTINGS
