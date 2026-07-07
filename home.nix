@@ -11,16 +11,16 @@
   home.homeDirectory = "/home/jamief";
   home.stateVersion = "25.11";
 
-  ## SYMLINKING DOTFILES
-  home.file = {
-    ".zshrc".source = /home/jamief/.dotfiles/.zshrc;
-    ".zshenv".source = /home/jamief/.dotfiles/.zshenv;
-    ".zsh".source = /home/jamief/.dotfiles/.zsh;
-    ".vimrc".source = /home/jamief/.dotfiles/.vimrc;
-    ".latexmkrc".source = /home/jamief/.dotfiles/.latexmkrc;
-    ".dir_colors".source = /home/jamief/.dotfiles/.dir_colors;
-    ".config/alacritty".source = /home/jamief/.dotfiles/.config/alacritty;
-  };
+	## SYMLINKING DOTFILES
+	home.file = {
+		".zshrc".source = config.lib.file.mkOutOfStoreSymlink /home/jamief/.dotfiles/.zshrc;
+		".zshenv".source = config.lib.file.mkOutOfStoreSymlink /home/jamief/.dotfiles/.zshrc;
+    	".zsh".source = config.lib.file.mkOutOfStoreSymlink /home/jamief/.dotfiles/.zsh;
+	    ".vimrc".source = config.lib.file.mkOutOfStoreSymlink /home/jamief/.dotfiles/.vimrc;
+	    ".latexmkrc".source = config.lib.file.mkOutOfStoreSymlink /home/jamief/.dotfiles/.latexmkrc;
+	    ".dir_colors".source = config.lib.file.mkOutOfStoreSymlink /home/jamief/.dotfiles/.dir_colors;
+	    ".config/alacritty".source = config.lib.file.mkOutOfStoreSymlink /home/jamief/.dotfiles/.config/alacritty;
+	};
 
   # Setting some default applications 	
   xdg.mimeApps = {
