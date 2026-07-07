@@ -2,10 +2,13 @@
 {pkgs, ...}:
 
 {
-  # Enable Plasma
-  services.desktopManager.plasma6.enable = true;
-  # Default display manager for Plasma (a fork of SSDM)
-  displayManager.plasma-login-manager.enable = true;
+  services = {
+	# Enable Plasma
+	desktopManager.plasma6.enable = true;
+
+	# Default display manager for Plasma (a fork of SSDM)
+	displayManager.plasma-login-manager.enable = true;
+  };
 
   # Optional but recommended for Plasma integration:
   # Enable dconf so GTK application settings persist nicely under Plasma
