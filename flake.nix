@@ -3,39 +3,47 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-	home-manager = {
-    	url = "github:nix-community/home-manager";
-	    inputs.nixpkgs.follows = "nixpkgs";
-       	};
-#	plasma-manager = {
-#	    url = "github:pjones/plasma-manager";
-#	    inputs.nixpkgs.follows = "nixpkgs";
-#	    inputs.home-manager.follows = "home-manager";
-#	  };
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager#, plasma-manager }: {
-	}: {
+  outputs = { self, nixpkgs, home-manager }: {
     nixosConfigurations = {
       vm = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ 
-		./hosts/vm/configuration.nix
-		home-manager.nixosModules.home-manager
-	          {
-        	    home-manager.useGlobalPkgs = true;
-	            home-manager.useUserPackages = true;
-	            home-manager.users.jamief = {
-					imports = [
-						 ./home.nix
-						 ./hosts/vm/home.nix
-					];
-				};
-#				home-manager.sharedModules = [
-#					plasma-manager.homeModules.plasma-manager
-#				];
-        	  }
-	     ];
+          ./hosts/vm/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.jamief = {
+              imports = [
+                ./home.nix
+                ./hosts/vm/home.nix
+              ];
+            };
+          }
+        ];
+      };
+      pc = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/pc/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.jamief = {
+              imports = [
+                ./home.nix
+                ./hosts/pc/home.nix
+              ];
+            };
+          }
+        ];
       };
     };
   };
