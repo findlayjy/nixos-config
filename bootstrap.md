@@ -10,15 +10,20 @@ Boot from USB, run the graphical installer as normal, set up a username (`jamief
 
 Install and reboot.
 
-## 2. Log in and set up git identity
+## 2. Acquire some temporary tools
 
 ```bash
-nix-shell -p git
+nix-shell -p git vim
+```
+
+## 3. Log in and set up git identity
+
+```bash
 git config --global user.name "Jamie Findlay"
 git config --global user.email "jy.findlay@gmail.com"
 ```
 
-## 3. Generate SSH key and add to GitHub
+## 4. Generate SSH key and add to GitHub
 
 ```bash
 ssh-keygen -t ed25519 -C "jy.findlay@gmail.com"
@@ -33,37 +38,45 @@ Test:
 ssh -T git@github.com
 ```
 
-## 4. Clone the config repos
+## 5. Clone the config repos
 
 ```bash
 git clone git@github.com:findlayjy/nixos-config.git ~/nixos-config
 git clone git@github.com:findlayjy/.dotfiles.git ~/.dotfiles
 ```
 
-## 5. Generate hardware config and copy it in
+## 6. Copy hardware config to new host
 
 ```bash
-sudo nixos-generate-config # May not be necessary, but can't hurt
-cp /etc/nixos/hardware-configuration.nix ~/nixos-config/hosts/pc/
+cp /etc/nixos/hardware-configuration.nix ~/nixos-config/hosts/{$HOST_NAME}/
 ```
 
-## 6. Set `system.stateVersion` and `home.stateVersion`
+## 7. Set `system.stateVersion` and `home.stateVersion`
 
 Check what the installer's own `/etc/nixos/configuration.nix` set as `system.stateVersion` — copy that value into:
 
-- `~/nixos-config/hosts/pc/configuration.nix`
-- `~/nixos-config/hosts/pc/home.nix`
+- `~/nixos-config/hosts/{$HOST_NAME}/configuration.nix`
+- `~/nixos-config/hosts/{$HOST_NAME}/home.nix`
 
-## 7. Rebuild using your flake
+## 8. Rebuild using your flake
 
 ```bash
 sudo nixos-rebuild switch --flake ~/nixos-config#{$HOST_NAME}
 ```
 
-## 8. Reboot
+## 9. Reboot
 
 ```bash
 sudo reboot
+```
+
+## After: install Doom emacs
+
+```bash
+git clone git@github.com:findlayjy/doom.git ~/.config/doom
+git clone --depth 1 https://github.com/doomemacs/core ~/.config/emacs
+~/.config/emacs/bin/doom install
+~/.config/emancs/bin/doom sync
 ```
 
 ## Note on COSMIC setup
