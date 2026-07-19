@@ -1,5 +1,5 @@
 { config, pkgs, ... }:
 
 {
-  # home.stateVersion = "25.11"; # Home Manager first-install version
+  home.stateVersion = "26.05"; # Home Manager first-install version
 }

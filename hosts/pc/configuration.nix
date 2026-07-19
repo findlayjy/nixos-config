@@ -14,5 +14,5 @@
 
   networking.hostName = "pc";
 
-  # system.stateVersion = "25.11"; # Fill in with install version
+  system.stateVersion = "26.05";
 }
