@@ -13,6 +13,7 @@ Install and reboot.
 ## 2. Log in and set up git identity
 
 ```bash
+nix-shell -p git
 git config --global user.name "Jamie Findlay"
 git config --global user.email "jy.findlay@gmail.com"
 ```
