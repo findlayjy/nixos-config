@@ -27,8 +27,8 @@
     tree
     tldr
     brave
-    spotify
-    spicetify-cli
+    # spotify
+    # spicetify-cli
     discord
     # nordic
     texliveFull
