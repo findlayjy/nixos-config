@@ -5,9 +5,10 @@ let
 in
 {
   imports = [
-#    ./modules/desktop-environments/gnome/home.nix # User settings for Gnome
-#    ./modules/desktop-environments/plasma/home.nix # User settings for Plasma
-   ./modules/desktop-environments/cosmic/home.nix # Enable when COSMIC is configured the way I like
+    #    ./modules/desktop-environments/gnome/home.nix # User settings for Gnome
+    #    ./modules/desktop-environments/plasma/home.nix # User settings for Plasma
+    ./modules/desktop-environments/cosmic/home.nix # Enable when COSMIC is configured the way I like
+    spicetify-nix.homeManagerModules.default
   ];
   
   ## BASIC SETTINGS
@@ -46,15 +47,15 @@ in
   ## USER PACKAGES
   # Prettifying Spotify
   programs.spicetify = {
-     enable = true;
-     enabledExtensions = with spicePkgs.extensions; [
-       shuffle
-       hidePodcasts
-     ];
-     theme = spicePkgs.themes.nord;
-     # colorScheme = "mocha";
-   };
- 
+    enable = true;
+    enabledExtensions = with spicePkgs.extensions; [
+      shuffle
+      hidePodcasts
+    ];
+    theme = spicePkgs.themes.nord;
+    # colorScheme = "mocha";
+  };
+
   # Git settings
   programs.git = {
     enable = true;
