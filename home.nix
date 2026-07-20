@@ -1,5 +1,8 @@
-{ config, pkgs, ... }:
+{ config, pkgs, spicetify-nix, ... }:
 
+let
+  spicePkgs = spicetify-nix.legacyPackages.${pkgs.stdenv.system};
+in
 {
   imports = [
 #    ./modules/desktop-environments/gnome/home.nix # User settings for Gnome
@@ -41,7 +44,16 @@
   };
 
   ## USER PACKAGES
-  # ...
+  # Prettifying Spotify
+  programs.spicetify = {
+     enable = true;
+     enabledExtensions = with spicePkgs.extensions; [
+       shuffle
+       hidePodcasts
+     ];
+     theme = spicePkgs.themes.nord;
+     # colorScheme = "mocha";
+   };
  
   # Git settings
   programs.git = {
