@@ -52,7 +52,8 @@ in
       shuffle
       hidePodcasts
     ];
-    theme = spicePkgs.themes.nord;
+    # theme = spicePkgs.themes.nord;
+    theme = spicePkgs.themes.nightlight;
     # colorScheme = "mocha";
   };
 
