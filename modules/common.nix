@@ -28,6 +28,7 @@
     tldr
     brave
     spotify
+    spicetify-cli
     discord
     # nordic
     texliveFull
