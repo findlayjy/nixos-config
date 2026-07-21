@@ -51,10 +51,11 @@ in
     enabledExtensions = with spicePkgs.extensions; [
       shuffle
       hidePodcasts
+      popupLyrics
+      betterGenres
     ];
-    # theme = spicePkgs.themes.nord;
-    theme = spicePkgs.themes.nightlight;
-    # colorScheme = "mocha";
+    theme = spicePkgs.themes.sleek;
+    colorScheme = "Nord";
   };
 
   # Git settings
