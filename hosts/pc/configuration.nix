@@ -24,5 +24,21 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable; # stable rather than beta/production branch
   };
 
+  # Fixing Bluetooth dongle bug
+  systemd.services.bluetooth-reset = {
+    description = "Reload btusb to work around ASUS USB-BT500 init bug";
+    after = [ "bluetooth.service" ];
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      RemainAfterExit = true;
+      ExecStartPre = "${pkgs.coreutils}/bin/sleep 5";
+      ExecStart = [
+        "${pkgs.kmod}/bin/modprobe -r btusb"
+        "${pkgs.kmod}/bin/modprobe btusb"
+      ];
+    };
+  };
+
   system.stateVersion = "26.05";
 }
