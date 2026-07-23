@@ -68,4 +68,7 @@ in
     };
   };
 
+  # NordVPN
+  services.nordvpn.enable = true;
+
 }
