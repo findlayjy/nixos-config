@@ -24,6 +24,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit spicetify-nix; };
             home-manager.users.jamief = {
               imports = [
                 ./home.nix
