@@ -9,13 +9,7 @@
   ];
 
   # Boot settings
-  boot.loader.systemd-boot.enable = false;
-  boot.loader.grub = {
-    enable = true;
-    efiSupport = true;
-    devices = [ "nodev" ];  # UEFI install, not writing to an MBR
-    useOSProber = true;
-  };
+  boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.timeout = 3; # seconds
 
