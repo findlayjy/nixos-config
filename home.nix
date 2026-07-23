@@ -68,4 +68,7 @@ in
     };
   };
 
+  # Install Dropbox and run the daemon
+  services.dropbox.enable = true;
+
 }
