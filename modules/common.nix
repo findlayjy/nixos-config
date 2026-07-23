@@ -69,6 +69,7 @@
     enable = true;
     extensions = [
       "fdjamakpfbbddfjaooikfcpapjohcfmg" # Dashlane
+      "aapbdbdomjkkjkaonfhkkikfgjllcleb" # Google Translate
     ];
   };
 
