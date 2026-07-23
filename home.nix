@@ -5,10 +5,8 @@ let
 in
 {
   imports = [
-    #    ./modules/desktop-environments/gnome/home.nix # User settings for Gnome
-    #    ./modules/desktop-environments/plasma/home.nix # User settings for Plasma
-    ./modules/desktop-environments/cosmic/home.nix # Enable when COSMIC is configured the way I like
-    spicetify-nix.homeManagerModules.default
+    ./modules/desktop-environments/cosmic/home.nix # Importing COSMIC settings 
+	  spicetify-nix.homeManagerModules.default
   ];
   
   ## BASIC SETTINGS
@@ -30,6 +28,7 @@ in
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
+      # Browser
       "text/html" = "brave-browser.desktop";
       "x-scheme-handler/http" = "brave-browser.desktop";
       "x-scheme-handler/https" = "brave-browser.desktop";
@@ -42,6 +41,12 @@ in
       "application/x-extension-xht" = "brave-browser.desktop";
       "x-scheme-handler/about" = "brave-browser.desktop";
     };
+  };
+
+  # Making Emacs default editor
+  home.sessionVariables = {
+    EDITOR = "emacsclient --alternate-editor= -nw";
+    VISUAL = "emacsclient --alternate-editor= -c";
   };
 
   ## USER PACKAGES
