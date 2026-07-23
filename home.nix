@@ -44,10 +44,10 @@ in
   };
 
   # Making Emacs default editor
-  home.sessionVariables = {
-    EDITOR = "emacsclient --alternate-editor= -nw";
-    VISUAL = "emacsclient --alternate-editor= -c";
-  };
+  # home.sessionVariables = {
+  #   EDITOR = "emacsclient --alternate-editor= -nw";
+  #   VISUAL = "emacsclient --alternate-editor= -c";
+  # };
 
   ## USER PACKAGES
   # Prettifying Spotify
