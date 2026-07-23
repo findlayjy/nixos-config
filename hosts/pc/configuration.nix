@@ -40,5 +40,11 @@
     };
   };
 
+  ## PC-specific packages
+  environment.systemPackages = with pkgs; [
+    itch # itch.io launcher
+  ];
+
+
   system.stateVersion = "26.05";
 }
