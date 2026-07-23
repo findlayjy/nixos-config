@@ -75,10 +75,10 @@
   ## FONTS
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono  # JetBrains Mono
-	  nerd-fonts.symbols-only
-	  fira                       # Fira Sans
-	  symbola
-	  source-sans
+    nerd-fonts.symbols-only
+    fira                       # Fira Sans
+    symbola
+    source-sans
   ];
 
   ## NETWORKING
@@ -90,7 +90,7 @@
   console.keyMap = "uk";
 
   ## DESKTOP
-#  services.xserver.enable = true;
+  # services.xserver.enable = true;
   services.xserver.xkb = {
     layout = "gb";
     variant = "";
