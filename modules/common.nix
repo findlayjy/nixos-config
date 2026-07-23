@@ -75,8 +75,6 @@
 
   # NordVPN
   services.nordvpn.enable = true;
-  # Adding my user to the group for permissions
-  users.users.jamief.extraGroups = [ "nordvpn" ];
 
   ## FONTS
   fonts.packages = with pkgs; [
@@ -119,7 +117,11 @@
   users.users.jamief = {
     isNormalUser = true;
     description = "Jamie Findlay";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "nordvpn" # NordVPN wants its own group
+    ];
   };
 
   ## NIX SETTINGS
