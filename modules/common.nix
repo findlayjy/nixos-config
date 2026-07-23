@@ -27,20 +27,23 @@
     tree
     tldr
     brave
-    nordic
-    # texliveFull
-    texliveMedium
-    # Python
+    # spotify
+    # spicetify-cli
+    discord
+    # nordic
+    texliveFull
+    # texliveMedium
+    ## Python
     python3
     python3Packages.isort
     python3Packages.pytest
     pipenv
-    # Haskell
+    ## Haskell
     haskellPackages.ghc
     haskellPackages.cabal-install
     haskellPackages.hoogle
     haskell-language-server
-    # Doom emacs requirements
+    ## Doom emacs requirements
     fd
     ripgrep
     pandoc  # for markdown compiling

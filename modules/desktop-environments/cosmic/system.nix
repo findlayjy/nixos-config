@@ -21,7 +21,7 @@
 
 	# Some COSMIC-specific packages
 	environment.systemPackages = with pkgs; [
-		cosmic-monitor
+		cosmic-monitor # system monitor
 	];
 
 }

@@ -1,10 +1,14 @@
-{ config, pkgs, ... }:
+{ config, pkgs, spicetify-nix, ... }:
 
+let
+  spicePkgs = spicetify-nix.legacyPackages.${pkgs.stdenv.system};
+in
 {
   imports = [
-#    ./modules/desktop-environments/gnome/home.nix # User settings for Gnome
-#    ./modules/desktop-environments/plasma/home.nix # User settings for Plasma
-   ./modules/desktop-environments/cosmic/home.nix # Enable when COSMIC is configured the way I like
+    #    ./modules/desktop-environments/gnome/home.nix # User settings for Gnome
+    #    ./modules/desktop-environments/plasma/home.nix # User settings for Plasma
+    ./modules/desktop-environments/cosmic/home.nix # Enable when COSMIC is configured the way I like
+    spicetify-nix.homeManagerModules.default
   ];
   
   ## BASIC SETTINGS
@@ -41,8 +45,19 @@
   };
 
   ## USER PACKAGES
-  # ...
- 
+  # Prettifying Spotify
+  programs.spicetify = {
+    enable = true;
+    enabledExtensions = with spicePkgs.extensions; [
+      shuffle
+      hidePodcasts
+      popupLyrics
+      betterGenres
+    ];
+    theme = spicePkgs.themes.sleek;
+    colorScheme = "Nord";
+  };
+
   # Git settings
   programs.git = {
     enable = true;
