@@ -51,13 +51,15 @@
     pandoc  # for markdown compiling
     shellcheck
     grip
+    nixfmt # formatting for nix
+    zig # for building ghostel
   ];
 
   # Enable emacs daemon and set as default editor
-  # services.emacs = {
-  #   enable = true;
-  #   defaultEditor = true;
-  # };
+  services.emacs = {
+    enable = true;
+    defaultEditor = true;
+  };
 
   # Firefox
   programs.firefox.enable = true;
