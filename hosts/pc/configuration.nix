@@ -9,9 +9,10 @@
   ];
 
   # Boot settings
+  boot.loader.grub.enable = false;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.timeout = 3; # seconds
+  boot.loader.timeout = 0; # seconds
 
   # NVidia settings
   services.xserver.videoDrivers = [ "nvidia" ];
