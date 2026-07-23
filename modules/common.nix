@@ -73,6 +73,11 @@
     ];
   };
 
+  # NordVPN
+  services.nordvpn.enable = true;
+  # Adding my user to the group for permissions
+  users.users.jamief.extraGroups = [ "nordvpn" ];
+
   ## FONTS
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono  # JetBrains Mono
