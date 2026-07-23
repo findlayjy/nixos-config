@@ -16,6 +16,8 @@
   ## PACKAGES
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  # Allow unfree firmware
+  hardware.enableRedistributableFirmware = true;
 
   # General system packages without dedicated Nix modules
   environment.systemPackages = with pkgs; [
